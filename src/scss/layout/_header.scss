@@ -1,0 +1,335 @@
+// ===============> Barra <================ 
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 2rem;
+    transition: .5s;
+    padding: 1rem 7%;
+
+    @media (max-width: 990px) {
+        .nav {
+            display: none;
+            .nav__list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            padding: 1rem 3%;
+            background: $gri;
+            border-top: .1rem solid rgba(0, 0, 0, .2);
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+            opacity: 0;
+            transition: all .5s ease;
+
+            &.activo {
+                opacity: 1;
+                height: 50vh;
+                display: block;
+            }
+
+
+
+            a {
+                display: block;
+                font-size: 2rem;
+                margin: 3rem 0;
+                color: $gris;
+            }
+
+
+        }
+
+
+
+        &.back {
+            background-color: $gri;
+        }
+
+
+
+    }
+
+
+
+    .nav__list {
+        display: flex;
+        align-items: center;
+        list-style: none;
+
+
+        a {
+            font-size: 1.7rem;
+            color: $naranja;
+            font-weight: 600;
+            margin-right: 4rem;
+        }
+
+        li:nth-child(4) {
+            display: none;
+        }
+
+    }
+
+    .abrir--menu {
+        display: flex;
+        flex-direction: column;
+        width: 3rem;
+        height: 3rem;
+        border: 0;
+        background: transparent;
+        gap: .65rem;
+
+
+        div {
+
+            background: $naranja;
+            height: 2px;
+            width: 100%;
+            border-radius: 5px;
+            transition: all .5s;
+            transform-origin: left;
+        }
+
+        &:hover div:first-child {
+            transform: rotate(45deg);
+        }
+
+        &:hover div:nth-child(2) {
+            opacity: 0;
+        }
+
+        &:hover div:last-child {
+            transform: rotate(-45deg);
+        }
+
+
+    }
+
+
+
+
+
+
+
+    &.sticky {
+        background: $gri;
+        box-shadow: 0 .1rem 1rem $gris;
+
+        .cv {
+            picture:nth-child(1) {
+                display: none;
+            }
+
+            picture:nth-child(2) {
+                display: block;
+            }
+
+            a:nth-child(3) {
+                display: none;
+            }
+
+            a:nth-child(4) {
+                display: block;
+            }
+
+            h2 {
+                color: $gris;
+            }
+        }
+
+        .header__hambur {
+            display: flex;
+            justify-content: right;
+        }
+
+        .nav__list {
+            li:nth-child(4) {
+                display: block;
+            }
+        }
+    }
+
+    .header__hambur {
+        display: flex;
+        align-items: center;
+        z-index: 100;
+    }
+
+
+}
+
+@include desktop() {
+    .abrir--menu {
+
+       div{
+        display: none;
+       } 
+
+    }
+}
+
+
+
+.cv {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+
+
+    img {
+        max-width: 8rem;
+        transition: 0.5s;
+        object-fit: cover;
+        display: none;
+    }
+
+    h2 {
+        font-size: 3rem;
+        font-family: $fuente_ter;
+        color: $gris-claro;
+        margin-bottom: 0;
+        transition: 0.5s;
+        object-fit: cover;
+        margin-left: 1rem;
+        display: none;
+    }
+
+    h2:hover {
+        color: $naranja-claro;
+        transform: scale(1.2);
+    }
+
+    &:hover {
+        transform: scale(1.2);
+    }
+
+    picture:nth-child(2) {
+        display: block;
+    }
+
+    a:nth-child(4) {
+        display: block;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ===============> Inicio <================ 
+.items {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+
+    @include desktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 90%;
+        flex-wrap: wrap;
+    }
+
+    .texto {
+        flex: 1;
+
+        h1 {
+            font-size: 6rem;
+            font-family: $fuente_principal;
+            color: $gris;
+            margin-bottom: 0;
+
+            @include desktop {
+                font-size: 11rem;
+            }
+        }
+
+
+
+        h3 {
+            display: block;
+            margin: 0;
+            white-space: nowrap;
+            border-right: 4px solid;
+            width: 17ch;
+
+            animation: typing 2s steps(17), blink .5s infinite step-end alternate;
+            overflow: hidden;
+
+            overflow: hidden;
+
+            font-size: 3.5rem;
+            font-family: $fuente_sec;
+            color: $naranja;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border: transparent;
+            }
+        }
+
+    }
+
+    .imgg {
+        max-width: 90%;
+
+        @include desktop {
+            flex: 2;
+            max-width: 50%;
+        }
+    }
+
+}
+
+
+@include phone() {
+    .cv {
+        img {
+            display: block;
+        }
+
+        h2 {
+            display: block;
+        }
+
+        picture:nth-child(2) {
+            display: none;
+        }
+
+        a:nth-child(4) {
+            display: none;
+        }
+
+    }
+
+}

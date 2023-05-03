@@ -1,0 +1,104 @@
+.skills {
+	padding-top: 15rem;
+	padding-bottom: 11rem;
+
+	h1 {
+		font-family: $fuente_principal;
+		text-align: center;
+		font-size: 8rem;
+		color: $naranja;
+	}
+
+	.up {
+		position: absolute;
+		max-width: 80%;
+		transform: translate(-30%, -5%);
+		@include phone() {
+			max-width: 50%;
+			transform: translate(-30%, 1%);
+		}
+		@include tablet() {
+			max-width: 35%;
+			transform: translate(-30%, 10%);
+		}
+		@include desktop() {
+			max-width: 30%;
+			transform: translate(-30%, -20%);
+		}
+		@include desktopXL() {
+			max-width: 30%;
+			transform: translate(-50%, -59%);
+		}
+
+	}
+
+
+}
+
+
+
+.carousel {
+	position: relative;
+	max-width: 60%;
+}
+
+.carousel__anterior,
+.carousel__siguiente {
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 30px;
+	border: none;
+	top: calc(50% - 35px);
+	cursor: pointer;
+	line-height: 30px;
+	text-align: center;
+	background: none;
+	color: $blanco;
+	opacity: 40%;
+	background-color: $naranja;
+	border-radius: 30%;
+}
+
+.carousel__lista {
+	padding-top: 5rem;
+}
+
+.carousel__anterior:hover,
+.carousel__siguiente:hover {
+	opacity: 100%;
+}
+
+
+.carousel__anterior {
+	left: -30px;
+}
+
+.carousel__siguiente {
+	right: -3rem;
+}
+
+.carousel__lista {
+	overflow: hidden;
+}
+
+.carousel__elemento {
+	text-align: center;
+}
+
+.carousel__indicadores .glider-dot {
+	display: block;
+	width: 4rem;
+	height: 1rem;
+	background: $naranja-claro;
+	opacity: .2;
+	border-radius: 0;
+}
+
+.carousel__indicadores .glider-dot:hover {
+	opacity: .5;
+}
+
+.carousel__indicadores .glider-dot.active {
+	opacity: 1;
+}

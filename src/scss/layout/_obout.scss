@@ -1,0 +1,114 @@
+.about {
+    background-color: $gri;
+    display: flex;
+    flex-direction: column;
+    flex-direction: column-reverse;
+   
+
+   
+
+    img {
+        width: 80vh;
+    }
+
+    .contenido__about {
+
+        h3 {
+            font-size: 3.2rem;
+            font-weight: 600;
+        }
+
+        h3:nth-of-type(2) {
+            margin-bottom: 2rem;
+        }
+
+        span {
+            color: $naranja;
+        }
+
+        h1 {
+            font-size: 5.6rem;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        p {
+            font-size: 1.6rem;
+        }
+
+        .social-medias {
+            a {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 4rem;
+                height: 4rem;
+                background: transparent;
+                border: .2rem solid $naranja;
+                border-radius: 50%;
+                font-size: 2rem;
+                color: $naranja-claro;
+                margin: 3rem 1.5rem 3rem 0;
+                transition: .5s ease;
+            }
+
+            a:hover {
+                background-color: $naranja;
+                color: $gri;
+                box-shadow: 0 0 1rem $naranja-claro;
+            }
+
+
+        }
+
+        .about-cv {
+            display: inline-block;
+            padding: 1rem 2.8rem;
+            background-color: $gri;
+            border: .2rem solid $naranja-claro;
+            border-radius: 4rem;
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: $naranja;
+            letter-spacing: .2rem;
+            font-weight: 600;
+            transition: .5s ease;
+        }
+
+        .about-cv:hover {
+            background-color: $naranja;
+            border: none;
+            color: $gri;
+            font-weight: 600;
+            box-shadow: 0 0 1rem $naranja-claro ;
+        }
+
+
+
+
+        // .think {
+        //     position: relative;
+        //    top:55%;
+        //    left: 20%;
+        //     @include tablet{
+        //         position: relative;
+        //         top: 92%;
+        //         left: 68%;
+        //         transform: translate(-50%, -50%);
+        //     }
+        // }
+
+    }
+}
+
+@include tablet() {
+
+    .about {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        
+    }
+}
